@@ -1,0 +1,41 @@
+p.facts {
+  font-style: italic;
+  }
+
+span {
+  font-weight: bold;
+}
+
+body {
+  border: 2px;
+  border-style: groove;
+  border-color: grey;
+  border-radius: 4px;
+  box-shadow: 7px 7px #565a60;
+  width: 310px;
+  padding: 5px;
+}
+
+.animal_information {
+  font-family: Roman;
+  border: 2px;
+  border-style: groove;
+  border-color: grey;
+  width: 290px;
+  margin: auto;
+  padding: 5px;
+}
+
+.image {
+  text-align: center;
+}
+
+.header {
+  padding-left: 10px;
+  font-size: 20px;
+  text-shadow: 1px 1px Grey;
+}
+
+ul {
+ padding-left: 3px;
+}
