@@ -7,6 +7,6 @@ For this quiz, use jQuery to set up an event listener. Your event listener must:
         b. add the `success` class to the body
 */
 $("#my-button").on("click", function() {
-   $("#my-tutton").remove();
+   $("#my-button").remove();
    var success = $(".container").addClass("success");
 });
