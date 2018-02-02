@@ -8,23 +8,30 @@
 <body>
     <h1>Pixel Art Maker</h1>
 
-    <div class="backcolor">
-    <h2>Pick A Color</h2>
-    <input type="color" id="colorPicker">
-
-    <h2>Choose Grid Size</h2>
-    <form id="sizePicker" onsubmit="return false">
+    <div class="container">
+        <div style="width: 20%; float:left;">
+            <h2>Pick a Color of Cell</h2>
+            <input type="color" id="colorPicker">
+        </div>
+        <div style="width: 20%; float:right;">
+            <h2>Pick A Color of Grid</h2>
+            <input type="color" value="#ffffff" id="colorPickerGrid">
+        </div>
+    
+        <h2>Choose Grid Size</h2>
+        <form id="sizePicker" onsubmit="return false">
         Grid Height:
         <input type="number" id="inputHeight" name="height" min="1" value="1"> <br>
         Grid Width:
         <input type="number" id="inputWeight" name="width" min="1" value="1"> <br>
-        <input type="submit" onclick="makeGrid()">
-    </form>
+        <input type="submit" value="Create Grid" onclick="makeGrid()">
+        <!--<input type="button" id="clearGrid" value="Clear Grid" onclick="clearGrid()"> -->
+        </form>
+
     </div>
 
     <h2>Design Canvas</h2>
     <table id="pixelCanvas"></table>
-
     <script src="designs.js"></script>
 </body>
 </html>
