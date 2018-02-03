@@ -1,32 +1,25 @@
 // Select color input
 // Select size input
-
 // When size is submitted by the user, call makeGrid()
 
 
 function makeGrid() {
-
+//declare size and color variables 
 const height = document.getElementById("inputHeight").value;
 const width = document.getElementById("inputWeight").value;
-const color = document.getElementById("colorPicker").value;
+let color;
 const colorGrid = document.getElementById("colorPickerGrid").value;
+const canvas = document.getElementById('pixelCanvas');
 
+//prevent duplication of grid
+for (let r = 0; r < canvas.rows.length; r++) {
+    canvas.deleteRow(r)
+}
 
-/*
-var table = document.getElementById("pixelCanvas");
-var row1 = table.insertRow(0);
-var row2 = table.insertRow(1);
-var cell1 = row1.insertCell(0);
-var cell2 = row2.insertCell(1);
-
- cell1.innerHTML = "   ";
- cell2.innerHTML = "   ";
-return false*/
-
-
+//creating grid
 for( var r=0; r<parseInt(height);r++)
     {
-    const x = document.getElementById('pixelCanvas').insertRow(r);
+    const x = canvas.insertRow(r);
     for(var c = 0; c < parseInt(width); c++)  
     {
         const y = x.insertCell(c);
@@ -34,33 +27,26 @@ for( var r=0; r<parseInt(height);r++)
         //    this.style.backgroundColor = colorGrid;
         //}
         y.onclick = function() {
+            color = document.getElementById("colorPicker").value;
             this.style.backgroundColor = color;
             }
     }}
 
-
-            /*else if(this.style.backgroundColor == color){ 
-                this.style.backgroundColor = colorGrid;
-            }
-
-            else{
-                console.log("ColourGrid " + this.style.backgroundColor.value);    
-                console.log("ColourCell " + color);
-                this.style.backgroundColor = color;
-            }*/
-   
-
-document.getElementById("pixelCanvas").style.backgroundColor = colorGrid;
-
+//painting grid
+canvas.style.backgroundColor = colorGrid;
 }
 
-/*function clearGrid() {
-alert("hi");    
-const colorGrid = document.getElementById("colorPickerGrid").value;
-const canvas = document.getElementById("pixelCanvas")
-console.log(colorGrid)
-document.getElementById("clearGrid").onclick = function() {
-    console.log("hello")
-    canvas.style.backgroundColor = colorGrid;
-}
-} */
+
+function clearGrid() {
+    //declare table and color variables
+    const canvas = document.getElementById('pixelCanvas');
+    const colorGrid = document.getElementById("colorPickerGrid").value;
+    
+    //reseting color of table
+    for (let r = 0; r < canvas.rows.length; r++) {
+        for (let c = 0; c < canvas.rows[r].cells.length; c++) {
+            canvas.rows[r].cells[c].style.backgroundColor = colorGrid;
+        }
+    }    
+} 
+
