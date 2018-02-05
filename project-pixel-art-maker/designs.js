@@ -12,24 +12,25 @@ const colorGrid = document.getElementById("colorPickerGrid").value;
 const canvas = document.getElementById('pixelCanvas');
 
 //prevent duplication of grid
-for (let r = 0; r < canvas.rows.length; r++) {
-    canvas.deleteRow(r)
+const leng = canvas.rows.length;
+for (let r=0; r < leng; r++) {
+    canvas.deleteRow(0);
 }
 
 //creating grid
-for( var r=0; r<parseInt(height);r++)
+for( let r=0; r<parseInt(height);r++)
     {
     const x = canvas.insertRow(r);
-    for(var c = 0; c < parseInt(width); c++)  
+    for(let c = 0; c < parseInt(width); c++)  
     {
         const y = x.insertCell(c);
-        //x.onmouseover = function() {
-        //    this.style.backgroundColor = colorGrid;
-        //}
         y.onclick = function() {
             color = document.getElementById("colorPicker").value;
             this.style.backgroundColor = color;
             }
+        y.ondblclick = function(){
+            this.style.backgroundColor = colorGrid;
+        };
     }}
 
 //painting grid
