@@ -1,0 +1,4 @@
+https://codepen.io/jump1556/pen/LQNKqq
+
+Here is a link to see the code and to try creating a grid.
+You can choose the size and the background color of the grid; choose colors of the cells, erase color by double click; clear and create a new grid. You can leave your feedback on anastasiia.kostashenko@gmail.com 
